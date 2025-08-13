@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Maqola qo'shish</title>
+</head>
+<body>
+    <h1>Maqola qo'shish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Sarlavha:</label>
+        <input type="text" id="title" name="title" required>
+        <br><br>
+        <label for="content">Matn:</label>
+        <textarea id="content" name="content" required></textarea>
+        <br><br>
+        <button type="submit">Yuborish</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Postlar{% endblock title %}
+
+{% block content %}
+
+
+<ul class="nav nav-pills align-items-center mb-4">
+    <li class="nav-item m-2">
+        <a class="nav-link fs-4 active" aria-current="page" href="{% url 'home' %}">Ortga</a>
+    </li>
+</ul>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 m-1">
+    {% for article in object_list %}
+    <div class="col">
+        <div class="card shadow-sm border-0 h-100" style="border-radius: 15px; overflow: hidden;">
+            {% if article.photo %}
+            <img src="{{ article.photo.url }}"
+                 class="card-img-top"
+                 style="
+                    height: 300px;
+                    object-fit: cover;
+                 "
+                 alt="{{ article.title }}">
+            {% endif %}
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-primary fw-bold mb-2">{{ article.title }}</h5>
+                <p class="card-text text-muted" style="flex-grow: 1;">
+                    {{ article.summary|truncatewords:15 }}
+                </p>
+                <a href="{% url 'about' %}" class="btn btn-primary mt-auto w-100" style="border-radius: 10px;">
+                    SOTIB OLISH
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+
+

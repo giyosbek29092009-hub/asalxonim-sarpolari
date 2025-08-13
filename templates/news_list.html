@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% extends 'base.html' %}
+{% block title %}Yangiliklar{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Yangiliklar</h2>
+    <div class="row">
+        {% for news in news_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ news.photo.url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5>{{ news.title }}</h5>
+                    <p>{{ news.summary|truncatewords:15 }}...</p>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ news.created_at|date:"j-F Y" }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+

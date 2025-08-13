@@ -1,0 +1,21 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Ro`yxatdan o`tish{% endblock title %}
+
+{% block content %}
+        
+    <form class="m-2" method="post">{% csrf_token %}
+      <h2>Ro`yxatdan o`tish shartlari:</h2>
+      <h3>Username: katta harf bilan boshlasin va 7 harfdan kam bola masin</h3>
+      <h3>Parol: 8ta harifdan kambo`lmasin va 2ta son bolsin</h3>
+        {{ form|crispy }}
+        <button  class="btn btn-outline-primary" style="font-size: 20px;" type="submit">Krish</button>
+    </form>
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}HTML sahifasi{% endblock %}
+
+{% block content %}
+    <ul class="nav nav-pills align-items-center">
+        <li class="nav-item m-3">
+            <a class="nav-link fs-4 active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+    </ul>
+
+    <h1>HTML sahifasi</h1>
+    <p>Bu maxsus `html.html` fayl orqali yaratilgan sahifa.</p>
+{% endblock %}

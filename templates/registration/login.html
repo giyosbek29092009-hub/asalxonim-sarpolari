@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form class="m-2" method="post">{% csrf_token %}
+           <h2>Saytga Krish</h2>
+     <a  href="{% url 'signup' %}"><h4>Ro`yxatdan o`tish</h4></a>
+        {{ form|crispy }}
+          
+        <button class="btn btn-outline-primary" style="font-size: 20px; border-radius: 8px;"  type="submit">Krish</button>
+      
+    </form>
+    
+
+
+
+{% endblock content %}
